@@ -1,6 +1,7 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 import { TanStackDevtools } from "@tanstack/react-devtools"
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 import appCss from "../styles.css?url"
 
@@ -15,7 +16,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "TanStack Start Starter",
+        title: "Enterprise Admin Console",
       },
     ],
     links: [
@@ -27,8 +28,8 @@ export const Route = createRootRoute({
   }),
   notFoundComponent: () => (
     <main className="container mx-auto p-4 pt-16">
-      <h1>404</h1>
-      <p>The requested page could not be found.</p>
+      <h1 className="text-2xl font-bold">404</h1>
+      <p className="text-muted-foreground mt-2">The requested page could not be found.</p>
     </main>
   ),
   shellComponent: RootDocument,
@@ -41,7 +42,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        {children}
+        <TooltipProvider delayDuration={200}>
+          {children}
+        </TooltipProvider>
         <TanStackDevtools
           config={{
             position: "bottom-right",
