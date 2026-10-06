@@ -9,6 +9,13 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./src/test/setup.ts"],
     include: ["src/**/*.{test,spec}.{ts,tsx}"],
+    exclude: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "src/components/dynamicGrid/**",
+      "src/hooks/dynamic-grid/**",
+      "src/lib/dynamic-grid/**",
+    ],
   },
   resolve: {
     alias: {

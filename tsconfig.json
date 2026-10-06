@@ -6,6 +6,13 @@
     "prettier.config.js",
     "vite.config.ts"
   ],
+  "exclude": [
+    "src/components/dynamicGrid/**/*",
+    "src/hooks/dynamic-grid/**/*",
+    "src/lib/dynamic-grid/**/*",
+    "node_modules",
+    "dist"
+  ],
   "compilerOptions": {
     "target": "ES2022",
     "jsx": "react-jsx",

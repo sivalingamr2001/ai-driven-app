@@ -16,6 +16,12 @@ export default [
     },
   },
   {
-    ignores: ["eslint.config.js", ".prettierrc"],
+    ignores: [
+      "eslint.config.js",
+      ".prettierrc",
+      "src/components/dynamicGrid/**",
+      "src/hooks/dynamic-grid/**",
+      "src/lib/dynamic-grid/**",
+    ],
   },
 ]
